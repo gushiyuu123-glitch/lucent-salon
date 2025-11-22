@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<!-- ============================ -->
+<!--         BASIC META           -->
+<!-- ============================ -->
+
+<title>Hair Salon LUCENT — 光と静けさのヘアサロン</title>
+<meta name="description" content="沖縄の静かな住宅街に佇むヘアサロン「LUCENT」。光が差し込む空間で、お客様一人ひとりの輪郭に寄り添うカットとカラーをご提供します。">
+
+<!-- モバイル最適化 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================ -->
+<!--         OGP / SNS             -->
+<!-- ============================ -->
+
+<meta property="og:title" content="Hair Salon LUCENT — 光と静けさのヘアサロン">
+<meta property="og:description" content="光が差し込む静かな空間で、あなたの素直な美しさを引き出します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://your-vercel-url.vercel.app/">
+<meta property="og:image" content="https://your-vercel-url.vercel.app/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ============================ -->
+<!--          FAVICON             -->
+<!-- ============================ -->
+
+<link rel="icon" href="./favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="./favicon.png">
+
+<!-- ============================ -->
+<!--       THEME COLOR             -->
+<!-- ============================ -->
+<meta name="theme-color" content="#faf8f4">
+
+<!-- ============================ -->
+<!--       FONT PRECONNECT        -->
+<!-- ============================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    body {
+      font-family: 'Noto Serif JP', serif;
+      color: #5a4f45;
+      background: #faf8f4;
+    }
+    .en {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.08em;
+    }
+
+    /* ==========================
+         Motion
+    =========================== */
+    .fade-up,
+    .fade,
+    .slow-img {
+      opacity: 0;
+      transform: translateY(6px);
+      transition: all 0.9s cubic-bezier(.25,.46,.45,.94);
+    }
+    .fade-up.show,
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .slow-img {
+      transition-duration: 1.2s;
+    }
+    .slow-img.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================
+         Smartphone Optimizer
+    =========================== */
+    @media (max-width: 768px) {
+
+      /* ↑ セクションごとの余白調整（必要な部分だけ） */
+      section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+      }
+
+      /* 見出しの位置補正 */
+      .title-fix {
+        left: 0 !important;
+      }
+
+      /* 行間調整 */
+      .sp-leading {
+        line-height: 1.95 !important;
+      }
+
+      /* ====== 画像の切れ防止（黄金比設定）====== */
+
+      /* HERO */
+      .hero-img {
+        height: 360px !important;
+        object-position: top center !important;
+      }
+
+      /* Concept */
+      .sp-concept {
+        height: 300px !important;
+        object-position: top center !important;
+      }
+
+      /* Style */
+      .sp-style {
+        height: 300px !important;
+        object-position: top center !important;
+      }
+
+      /* Mellow */
+      .sp-mellow {
+        height: 300px !important;
+        object-position: top center !important;
+      }
+
+      /* Access */
+      .sp-access {
+        height: 300px !important;
+        object-position: top center !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!--          HERO             -->
+<!-- ========================= -->
+
+<section class="w-full">
+  <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 lg:flex lg:items-center lg:gap-20">
+
+    <!-- 左テキスト -->
+    <div class="lg:w-[46%] w-full lg:pt-6 order-2 lg:order-1 fade-up">
+      <h1 class="en text-[2.4rem] md:text-[2.8rem] font-light mb-6">
+        Hair Salon LUCENT
+      </h1>
+
+      <p class="text-[1rem] md:text-[1.1rem] leading-relaxed mb-12">
+        あなたの輪郭に、いちばん素直な形を。
+      </p>
+
+      <div class="flex gap-10 text-sm en">
+        <a href="#menu" class="underline underline-offset-4 hover:opacity-70">Menu</a>
+        <a href="#style" class="underline underline-offset-4 hover:opacity-70">Style</a>
+        <a href="#access" class="underline underline-offset-4 hover:opacity-70">Access</a>
+      </div>
+    </div>
+
+    <!-- 右写真 -->
+    <div class="lg:w-[54%] w-full mb-10 lg:mb-0 order-1 lg:order-2 slow-img">
+      <img
+        src="./hero.png"
+        alt="Hair Model"
+        class="hero-img w-full h-[500px] md:h-[520px] object-cover"
+      />
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!--      CONCEPT SECTION      -->
+<!-- ========================= -->
+
+<section class="w-full py-28">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <h2 class="en text-[2.2rem] md:text-[2.6rem] font-light mb-14 tracking-wide relative fade-up title-fix">
+      Concept
+    </h2>
+
+    <p class="text-[1.05rem] md:text-[1.15rem] leading-[2.3] mb-14 max-w-[700px] fade-up sp-leading">
+      LUCENT は、光の差し込む静かな空間で、<br>
+      お客さま一人ひとりの “素直なかたち” を見つめる美容室です。<br><br>
+
+      無駄をそぎ落としたカットライン。<br>
+      柔らかな質感を引き出すカラーリング。<br>
+      そして、ふと鏡を見たときに “気持ちが整う” ような余白。<br><br>
+
+      すべては、あなたの輪郭と調和するために。
+    </p>
+
+    <div class="max-w-5xl mx-auto fade-up">
+      <img 
+        src="./concept.png"
+        alt="Concept"
+        class="w-full h-[420px] object-cover rounded-sm sp-concept"
+      >
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!--        STYLE SECTION      -->
+<!-- ========================= -->
+<section id="style" class="w-full py-32">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <div class="w-1/5 h-[1px] bg-[#5a4f45]/20 mx-auto mb-20 fade-up"></div>
+
+    <h2 class="en text-[2.2rem] md:text-[2.6rem] font-light mb-16 tracking-wide fade-up title-fix">
+      Style
+    </h2>
+
+    <p class="text-[1.05rem] md:text-[1.15rem] leading-[2.3] max-w-[700px] mb-20 fade-up">
+      光と影、質感とライン。<br>
+      ひとつの髪型が持つ “静かな美しさ” を丁寧に切り取ったスタイルギャラリーです。
+    </p>
+
+    <!-- 1 -->
+    <div class="mb-24 fade-up">
+      <img 
+        src="./style1.png"
+        alt="Style 1"
+        class="w-full h-[460px] object-cover rounded-sm slow-img sp-style"
+      >
+      <h3 class="en text-[1.6rem] font-light mt-6 mb-3 tracking-wide">Soft Bob</h3>
+      <p class="text-[0.95rem] leading-[1.9] max-w-[620px]">
+        柔らかい質感と、軽やかな動きをまとったボブスタイル。
+        横顔のラインが最も美しく見えるように仕上げています。
+      </p>
+    </div>
+
+    <!-- 2 -->
+    <div class="mb-20 fade-up">
+      <img 
+        src="./style2.png"
+        alt="Style 2"
+        class="w-full h-[430px] object-cover rounded-sm slow-img sp-style"
+      >
+      <h3 class="en text-[1.6rem] font-light mt-6 mb-3 tracking-wide">Natural Long</h3>
+      <p class="text-[0.95rem] leading-[1.9] max-w-[620px]">
+        光をやわらかく反射するナチュラルなロングヘア。
+        余白のある空気感と、静かな印象を大切にしています。
+      </p>
+    </div>
+
+    <!-- 3 -->
+    <div class="mb-32 fade-up">
+      <img 
+        src="./style3.png"
+        alt="Style 3"
+        class="w-full h-[490px] object-cover rounded-sm slow-img sp-style"
+      >
+      <h3 class="en text-[1.6rem] font-light mt-6 mb-3 tracking-wide">Low Layer</h3>
+      <p class="text-[0.95rem] leading-[1.9] max-w-[620px]">
+        低めのレイヤーで静かな動きをつけたスタイル。
+        上品さと軽さのバランスが整ったシルエットです。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!--     MELLOW SECTION        -->
+<!-- ========================= -->
+
+<section class="w-full py-40">
+  <div class="max-w-5xl mx-auto px-6 text-center fade-up">
+
+    <img 
+      src="./mellow.png" 
+      alt="Soft Light"
+      class="w-full h-[420px] md:h-[460px] object-cover rounded-sm mb-16 slow-img sp-mellow"
+    >
+
+    <p class="text-[1.15rem] md:text-[1.35rem] leading-[2.2] max-w-[800px] mx-auto text-[#5a4f45]">
+      光と影がゆっくりと溶け合うとき、  
+      髪は “本来の静かな美しさ” を見せはじめる。
+    </p>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!--        MENU SECTION       -->
+<!-- ========================= -->
+
+<section id="menu" class="w-full py-32 bg-[#faf8f4]">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <div class="w-[18%] h-[1px] bg-[#5a4f45]/25 mx-auto mb-20 fade-up"></div>
+
+    <h2 class="en text-[2.2rem] md:text-[2.6rem] font-light mb-12 tracking-wide fade-up text-center">
+      Menu
+    </h2>
+
+    <p class="text-[1.05rem] md:text-[1.15rem] leading-[2.3] max-w-[690px] mx-auto mb-24 text-center fade-up">
+      髪の“素直な美しさ”を引き出すために。  
+      LUCENTが大切にしているのは、過度な装飾ではなく丁寧な技術と静かなこだわりです。
+    </p>
+
+    <div class="space-y-20">
+
+      <!-- Cut -->
+      <div class="fade-up">
+        <h3 class="en text-[1.25rem] font-light mb-4 tracking-wide text-[#5a4f45]/70">Cut</h3>
+
+        <div class="space-y-4">
+          <div class="flex justify-between border-b border-[#5a4f45]/20 pb-3">
+            <span>カット</span>
+            <span class="en tracking-wide text-[1rem]">¥6,000</span>
+          </div>
+
+          <div class="flex justify-between border-b border-[#5a4f45]/20 pb-3">
+            <span>メンズカット</span>
+            <span class="en tracking-wide text-[1rem]">¥5,500</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color -->
+      <div class="fade-up">
+        <h3 class="en text-[1.25rem] font-light mb-4 tracking-wide text-[#5a4f45]/70">Color</h3>
+
+        <div class="space-y-4">
+          <div class="flex justify-between border-b border-[#5a4f45]/20 pb-3">
+            <span>カラー</span>
+            <span class="en tracking-wide text-[1rem]">¥7,000〜</span>
+          </div>
+
+          <div class="flex justify-between border-b border-[#5a4f45]/20 pb-3">
+            <span>ダブルカラー</span>
+            <span class="en tracking-wide text-[1rem]">¥13,000〜</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Perm -->
+      <div class="fade-up">
+        <h3 class="en text-[1.25rem] font-light mb-4 tracking-wide text-[#5a4f45]/70">Perm</h3>
+
+        <div class="space-y-4">
+          <div class="flex justify-between border-b border-[#5a4f45]/20 pb-3">
+            <span>パーマ</span>
+            <span class="en tracking-wide text-[1rem]">¥7,000〜</span>
+          </div>
+
+          <div class="flex justify-between border-b border-[#5a4f45]/20 pb-3">
+            <span>デジタルパーマ</span>
+            <span class="en tracking-wide text-[1rem]">¥12,000〜</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Treatment -->
+      <div class="fade-up">
+        <h3 class="en text-[1.25rem] font-light mb-4 tracking-wide text-[#5a4f45]/70">Treatment</h3>
+
+        <div class="space-y-4">
+          <div class="flex justify-between border-b border-[#5a4f45]/20 pb-3">
+            <span>トリートメント</span>
+            <span class="en tracking-wide text-[1rem]">¥4,000〜</span>
+          </div>
+
+          <div class="flex justify-between border-b border-[#5a4f45]/20 pb-3">
+            <span>ヘッドスパ</span>
+            <span class="en tracking-wide text-[1rem]">¥5,000〜</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!--        ACCESS SECTION     -->
+<!-- ========================= -->
+
+<section id="access" class="w-full py-32 bg-[#faf8f4]">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="w-1/5 h-[1px] bg-[#5a4f45]/20 mx-auto mb-20 fade-up"></div>
+
+    <h2 class="en text-[2.2rem] md:text-[2.6rem] font-light mb-16 tracking-wide fade-up">
+      Access
+    </h2>
+
+    <div class="mb-16 fade-up">
+      <img 
+        src="./access.png"
+        alt="Salon Exterior"
+        class="w-full h-[420px] md:h-[460px] object-cover rounded-sm slow-img sp-access"
+      >
+    </div>
+
+    <div class="fade-up mb-24">
+      <p class="text-[1.05rem] md:text-[1.15rem] leading-[2.3] text-[#5a4f45] mb-12 max-w-[720px]">
+        LUCENT は、静かな住宅街の中にひっそりと佇む  
+        プライベートヘアサロンです。  
+        やわらかな自然光が差し込む空間で、落ち着いた時間をお過ごしいただけます。
+      </p>
+
+      <div class="space-y-3 text-[0.95rem] md:text-[1.05rem] leading-[1.9]">
+        <p><span class="en tracking-wide mr-2">Address</span>沖縄県那覇市○○1-2-3</p>
+        <p><span class="en tracking-wide mr-2">Open</span>10:00–20:00</p>
+        <p><span class="en tracking-wide mr-2">Tel</span>090-xxxx-xxxx</p>
+        <p><span class="en tracking-wide mr-2">Parking</span>1台あり</p>
+      </div>
+    </div>
+
+    <div class="w-full h-[380px] md:h-[430px] overflow-hidden rounded-sm fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb="
+        class="w-full h-full border-0"
+        style="filter: brightness(0.98) contrast(1.02);"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!--      RESERVE BUTTON       -->
+<!-- ========================= -->
+
+<style>
+  .reserve-btn {
+    transition: 
+      border-color .3s ease,
+      background-color .3s ease,
+      transform .25s cubic-bezier(.25,.46,.45,.94);
+  }
+  .reserve-btn:active {
+    transform: scale(0.95);
+  }
+</style>
+
+<div class="w-full text-center fade-up mt-24 mb-10">
+  <a 
+    href="https://beauty.hotpepper.jp/"
+    target="_blank"
+    class="reserve-btn inline-block border border-[#5a4f45]/50 
+           hover:border-[#5a4f45] hover:bg-[#5a4f45]/5
+           px-12 py-4 rounded-none"
+  >
+    <div class="en text-[1.05rem] tracking-wide">Reserve</div>
+    <div class="text-[0.88rem] mt-1 text-[#5a4f45]/80">ご予約はこちら</div>
+  </a>
+</div>
+
+<!-- ========================= -->
+<!--          FOOTER           -->
+<!-- ========================= -->
+
+<footer class="w-full bg-[#faf8f4] py-20 mt-10 border-t border-[#d9d6d2]/50">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="en text-[1.8rem] tracking-wide text-[#5a4f45] text-center mb-10">
+      LUCENT
+    </h2>
+
+    <nav class="text-center mb-14">
+      <ul class="flex justify-center gap-10 text-[0.95rem] text-[#5a4f45] en">
+        <li><a href="#menu" class="hover:opacity-60 transition">Menu</a></li>
+        <li><a href="#style" class="hover:opacity-60 transition">Style</a></li>
+        <li><a href="#access" class="hover:opacity-60 transition">Access</a></li>
+      </ul>
+    </nav>
+
+    <p class="text-center text-[#5a4f45]/70 text-[0.8rem] tracking-wide">
+      © 2025 LUCENT
+    </p>
+
+  </div>
+</footer>
+
+<!-- ========================= -->
+<!--      MOTION SCRIPT        -->
+<!-- ========================= -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".fade-up, .fade, .slow-img")
+    .forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
