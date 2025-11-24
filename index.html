@@ -135,6 +135,26 @@
         object-position: top center !important;
       }
     }
+    /* ============================
+   Smartphone only adjustments
+   ============================ */
+@media screen and (max-width: 768px) {
+
+  /* HERO の余白（スマホだけ広げる） */
+  .hero-text-block {
+    margin-bottom: 26px !important;
+  }
+
+  /* Menu / Style / Access の文字サイズと余白（スマホ専用） */
+  .hero-nav a {
+    font-size: 1.3rem !important;   /* スマホ用：16px */
+  }
+
+  .hero-nav {
+    margin-top: 28px !important;  /* スマホ用：距離 +28px */
+  }
+}
+
   </style>
 </head>
 
@@ -148,7 +168,8 @@
   <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 lg:flex lg:items-center lg:gap-20">
 
     <!-- 左テキスト -->
-    <div class="lg:w-[46%] w-full lg:pt-6 order-2 lg:order-1 fade-up">
+    <div class="lg:w-[46%] w-full lg:pt-6 order-2 lg:order-1 fade-up hero-text-block">
+
       <h1 class="en text-[2.4rem] md:text-[2.8rem] font-light mb-6">
         Hair Salon LUCENT
       </h1>
@@ -157,7 +178,7 @@
         あなたの輪郭に、いちばん素直な形を。
       </p>
 
-      <div class="flex gap-10 text-sm en">
+      <div class="flex gap-10 en hero-nav">
         <a href="#menu" class="underline underline-offset-4 hover:opacity-70">Menu</a>
         <a href="#style" class="underline underline-offset-4 hover:opacity-70">Style</a>
         <a href="#access" class="underline underline-offset-4 hover:opacity-70">Access</a>
